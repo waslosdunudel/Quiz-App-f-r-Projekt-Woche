@@ -9,6 +9,14 @@ body {
   color: #1a1a1a;
 }
 
+.topbar {
+  background: #2f5bff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .app {
   max-width: 640px;
   margin: 0 auto;
