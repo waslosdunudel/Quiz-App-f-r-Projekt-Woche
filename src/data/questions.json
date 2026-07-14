@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Was ist die Hauptstadt von Deutschland?",
+    "options": ["München", "Berlin", "Hamburg", "Köln"],
+    "correctIndex": 1,
+    "timeLimit": 10
+  },
+  {
+    "question": "Wie viele Kontinente gibt es?",
+    "options": ["5", "6", "7", "8"],
+    "correctIndex": 2,
+    "timeLimit": 10
+  },
+  {
+    "question": "Welches Element hat das chemische Symbol 'O'?",
+    "options": ["Gold", "Sauerstoff", "Eisen", "Wasserstoff"],
+    "correctIndex": 1,
+    "timeLimit": 10
+  },
+  {
+    "question": "Wie viele Beine hat eine Spinne?",
+    "options": ["6", "8", "10", "4"],
+    "correctIndex": 1,
+    "timeLimit": 10
+  },
+  {
+    "question": "In welchem Jahr endete der Zweite Weltkrieg?",
+    "options": ["1918", "1939", "1945", "1950"],
+    "correctIndex": 2,
+    "timeLimit": 10
+  }
+]

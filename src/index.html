@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Quiz App</h1>
+    </header>
+
+    <main>
+      <!-- Start-Bildschirm -->
+      <section id="start-view" class="view active">
+        <h2>Willkommen!</h2>
+        <p>Beantworte alle Fragen so schnell und richtig wie möglich. Je schneller deine Antwort, desto mehr Bonuspunkte gibt es!</p>
+        <button id="start-btn" class="btn btn-primary">Quiz starten</button>
+        <button id="show-leaderboard-btn" class="btn btn-secondary">Bestenliste ansehen</button>
+      </section>
+
+      <!-- Quiz-Bildschirm -->
+      <section id="quiz-view" class="view">
+        <div class="quiz-meta">
+          <span id="question-counter">Frage 1/1</span>
+          <span id="score-display">Punkte: 0</span>
+        </div>
+        <div class="timer-bar-wrapper">
+          <div id="timer-bar" class="timer-bar"></div>
+        </div>
+        <div id="timer-seconds" class="timer-seconds">10</div>
+
+        <h2 id="question-text">Fragetext</h2>
+        <div id="answers-list" class="answers-list"></div>
+      </section>
+
+      <!-- Ergebnis-Bildschirm -->
+      <section id="result-view" class="view">
+        <h2>Quiz beendet!</h2>
+        <p>Dein Ergebnis:</p>
+        <p id="final-score" class="final-score">0 Punkte</p>
+
+        <form id="name-form" class="name-form">
+          <label for="player-name">Name für die Bestenliste:</label>
+          <input type="text" id="player-name" name="player-name" maxlength="20" placeholder="Dein Name" required />
+          <button type="submit" class="btn btn-primary">In Bestenliste eintragen</button>
+        </form>
+        <p id="submit-status" class="submit-status"></p>
+
+        <button id="play-again-btn" class="btn btn-secondary">Nochmal spielen</button>
+        <button id="view-leaderboard-btn" class="btn btn-secondary">Bestenliste ansehen</button>
+      </section>
+
+      <!-- Bestenliste -->
+      <section id="leaderboard-view" class="view">
+        <h2>Bestenliste (Top 100)</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Punkte</th>
+              <th>Datum</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+        <button id="back-from-leaderboard-btn" class="btn btn-secondary">Zurück</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/quiz.js" defer></script>
+  <script src="js/leaderboard.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
