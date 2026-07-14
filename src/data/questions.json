@@ -1,31 +1,69 @@
 [
   {
-    "question": "Was ist die Hauptstadt von Deutschland?",
-    "options": ["München", "Berlin", "Hamburg", "Köln"],
-    "correctIndex": 1,
-    "timeLimit": 10
-  },
-  {
-    "question": "Wie viele Kontinente gibt es?",
-    "options": ["5", "6", "7", "8"],
+    "question": "An welcher Straße ist die Schule?",
+    "image": "image/straßenbild.webp",
+    "options": ["Bleichstraße", "Werner-Bock Straße", "Hermann-Delius Straße", "Huberstraße"],
     "correctIndex": 2,
     "timeLimit": 10
   },
   {
-    "question": "Welches Element hat das chemische Symbol 'O'?",
-    "options": ["Gold", "Sauerstoff", "Eisen", "Wasserstoff"],
+    "question": "Wie viele Stockwerke hat das Gebäude M2?",
+    "image": "image/Hochhaus.webp",
+    "options": ["5", "6", "7", "8"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
-    "question": "Wie viele Beine hat eine Spinne?",
-    "options": ["6", "8", "10", "4"],
+    "question": "Wie heißt der derzeitige Schulleiter?",
+    "image": "image/profilbild.webp",
+    "options": ["Herr Müller", "Herr Volkman", "Herr Heine ", "Herr Grabowski"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
-    "question": "In welchem Jahr endete der Zweite Weltkrieg?",
-    "options": ["1918", "1939", "1945", "1950"],
+    "question": "Wie viele Gebäude hat CSBME?",
+    "image": "image/Gebäude.webp",
+    "options": ["3", "8", "5", "4"],
+    "correctIndex": 0,
+    "timeLimit": 10
+  },
+  {
+    "question": "Im welchem Jahr wurde die Schule CSBME erbaut?",
+    "image": "image/Huasbaustelle.webp",
+    "options": ["1963", "1994", "1980", "1976"],
+    "correctIndex": 3,
+    "timeLimit": 10
+  },
+  {
+    "question": "Wer ist der Abteilungsleiter des Beruflichen Grundbildung?",
+    "options": ["Bodo Letzsch", "Jochen Holwitt", "Jochen Holwitt", "Herr Heinrich"],
+    "correctIndex": 3,
+    "timeLimit": 10
+  },
+  {
+    "question": "Wie viele Abteilungen gibt es insgesamt?",
+    "options": ["7", "9", "5", "8"],
+    "correctIndex": 3,
+    "timeLimit": 10
+  },
+    {
+    "question": "Wofür Steht CSBME?",
+    "image": "image/CSBME.webp",
+    "options": ["Charlies Stehbetrieb Metall & Elektro", "Chemie-, Stahl-, Bau- und Metall-Elektrik", "Carl-Severing-Berufskolleg für Metall- und Elektrotechnik", "Computer Science und Biomedical Engineering"],
+    "correctIndex": 2,
+    "timeLimit": 10
+  },
+    {
+    "question": "Im welchen Gebäudenteil befindet sich das Sekretariat?",
+    "image": "image/gebäude.webp",
+    "options": ["M1", "M2", "Silicon-Valley", "M3"],
+    "correctIndex": 0,
+    "timeLimit": 10
+  },
+  {
+    "question": "Welche von diesen Fächern gibt es nicht in der CSBME",
+    "image": "image/fächer.webp",
+    "options": ["Politik", "Deutsch", "Biologie", "Religion "],
     "correctIndex": 2,
     "timeLimit": 10
   }

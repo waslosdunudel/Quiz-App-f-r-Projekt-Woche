@@ -1,0 +1,8 @@
+services:
+  quiz:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:8080:80"   # im lokalen Netzwerk über <server-ip>:8080 erreichbar
+    volumes:
+      - ./src/api/data:/var/www/html/api/data

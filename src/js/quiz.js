@@ -4,12 +4,13 @@
  * und berechnet die Punkte (Basis-Punkte + Zeitbonus).
  */
 const Quiz = (() => {
-  const BASE_POINTS = 100;
-  const MAX_TIME_BONUS = 50;
+  const MAX_POINTS = 1000;
+  const MIN_POINTS = 200;
   const NEXT_QUESTION_DELAY_MS = 1200;
   const TICK_MS = 100;
 
   const questionTextEl = document.getElementById("question-text");
+  const questionImageEl = document.getElementById("question-image");
   const answersListEl = document.getElementById("answers-list");
   const questionCounterEl = document.getElementById("question-counter");
   const scoreDisplayEl = document.getElementById("score-display");
@@ -29,6 +30,15 @@ const Quiz = (() => {
       throw new Error("Fragen konnten nicht geladen werden.");
     }
     return response.json();
+  }
+
+  function shuffle(array) {
+    const result = [...array];
+    for (let i = result.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
   }
 
   function updateScoreUI() {
@@ -61,6 +71,16 @@ const Quiz = (() => {
     const question = questions[currentIndex];
     questionCounterEl.textContent = `Frage ${currentIndex + 1}/${questions.length}`;
     questionTextEl.textContent = question.question;
+
+    if (question.image) {
+      questionImageEl.src = question.image;
+      questionImageEl.alt = question.question;
+      questionImageEl.hidden = false;
+    } else {
+      questionImageEl.hidden = true;
+      questionImageEl.src = "";
+    }
+
     answersListEl.innerHTML = "";
 
     question.options.forEach((optionText, index) => {
@@ -90,8 +110,10 @@ const Quiz = (() => {
     }
 
     if (isCorrect) {
-      const timeBonus = Math.round((timeLeft / (question.timeLimit || 10)) * MAX_TIME_BONUS);
-      score += BASE_POINTS + timeBonus;
+      const limit = question.timeLimit || 10;
+      const timeRatio = Math.max(0, Math.min(1, timeLeft / limit));
+      const points = Math.round(MIN_POINTS + timeRatio * (MAX_POINTS - MIN_POINTS));
+      score += points;
       updateScoreUI();
     }
 
@@ -118,6 +140,7 @@ const Quiz = (() => {
     if (questions.length === 0) {
       questions = await loadQuestions();
     }
+    questions = shuffle(questions);
     showQuestion();
   }
 
