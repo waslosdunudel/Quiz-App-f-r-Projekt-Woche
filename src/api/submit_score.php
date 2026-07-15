@@ -11,6 +11,43 @@ require __DIR__ . '/config.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
+/**
+ * Lädt die externe Liste verbotener Wörter (ein Wort pro Zeile).
+ */
+function loadBannedWords(string $path): array
+{
+    if (!is_file($path)) {
+        return [];
+    }
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if ($lines === false) {
+        return [];
+    }
+    $lines = array_map('mb_strtolower', $lines);
+    $lines = array_map('trim', $lines);
+    return array_values(array_filter($lines, static fn($w) => $w !== ''));
+}
+
+/**
+ * Prüft, ob der Name (nach Normalisierung) ein verbotenes Wort enthält.
+ */
+function containsBannedWord(string $name, array $bannedWords): bool
+{
+    $normalized = mb_strtolower($name);
+    // Einfache Leetspeak-/Sonderzeichen-Ersetzungen, um simple Umgehungen abzufangen.
+    $normalized = strtr($normalized, [
+        '0' => 'o', '1' => 'i', '3' => 'e', '4' => 'a',
+        '5' => 's', '7' => 't', '@' => 'a', '$' => 's',
+    ]);
+
+    foreach ($bannedWords as $word) {
+        if (mb_strpos($normalized, $word) !== false) {
+            return true;
+        }
+    }
+    return false;
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['error' => 'Nur POST-Anfragen erlaubt.']);
@@ -34,6 +71,14 @@ $name = mb_substr($name, 0, MAX_NAME_LENGTH);
 
 if ($name === '') {
     $name = 'Anonym';
+}
+
+// --- Wortfilter: Namen gegen externe Liste verbotener Wörter prüfen ---
+$bannedWords = loadBannedWords(BANNED_WORDS_PATH);
+if (containsBannedWord($name, $bannedWords)) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Der Name enthält unzulässige Wörter.']);
+    exit;
 }
 
 // Schutz vor CSV-Formel-Injection (z. B. wenn die Datei in Excel geöffnet wird).

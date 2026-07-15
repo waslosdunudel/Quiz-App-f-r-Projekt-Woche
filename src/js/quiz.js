@@ -19,6 +19,7 @@ const Quiz = (() => {
 
   let questions = [];
   let currentIndex = 0;
+  let currentCorrectIndex = 0;
   let score = 0;
   let timeLeft = 0;
   let timerInterval = null;
@@ -39,6 +40,15 @@ const Quiz = (() => {
       [result[i], result[j]] = [result[j], result[i]];
     }
     return result;
+  }
+
+  function shuffleOptions(question) {
+    const indexed = question.options.map((text, index) => ({ text, index }));
+    const shuffled = shuffle(indexed);
+    return {
+      options: shuffled.map((o) => o.text),
+      correctIndex: shuffled.findIndex((o) => o.index === question.correctIndex),
+    };
   }
 
   function updateScoreUI() {
@@ -69,6 +79,9 @@ const Quiz = (() => {
 
   function showQuestion() {
     const question = questions[currentIndex];
+    const { options, correctIndex } = shuffleOptions(question);
+    currentCorrectIndex = correctIndex;
+
     questionCounterEl.textContent = `Frage ${currentIndex + 1}/${questions.length}`;
     questionTextEl.textContent = question.question;
 
@@ -83,7 +96,7 @@ const Quiz = (() => {
 
     answersListEl.innerHTML = "";
 
-    question.options.forEach((optionText, index) => {
+    options.forEach((optionText, index) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "answer-btn";
@@ -101,12 +114,12 @@ const Quiz = (() => {
     const buttons = Array.from(answersListEl.querySelectorAll(".answer-btn"));
     buttons.forEach((button) => (button.disabled = true));
 
-    const isCorrect = selectedIndex === question.correctIndex;
+    const isCorrect = selectedIndex === currentCorrectIndex;
     if (selectedIndex !== null) {
       buttons[selectedIndex].classList.add(isCorrect ? "correct" : "incorrect");
     }
     if (!isCorrect) {
-      buttons[question.correctIndex].classList.add("correct");
+      buttons[currentCorrectIndex].classList.add("correct");
     }
 
     if (isCorrect) {

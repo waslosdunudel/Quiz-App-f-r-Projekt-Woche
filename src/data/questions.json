@@ -7,7 +7,7 @@
     "timeLimit": 10
   },
   {
-    "question": "Wie viele Stockwerke hat das Gebäude M2?",
+    "question": "Wie viele Etagen hat das Gebäude M2?",
     "image": "image/Hochhaus.webp",
     "options": ["5", "6", "7", "8"],
     "correctIndex": 1,
@@ -55,7 +55,7 @@
   },
     {
     "question": "Im welchen Gebäudenteil befindet sich das Sekretariat?",
-    "image": "image/gebäude.webp",
+    "image": "image/Schulbuero in M1.jpg",
     "options": ["M1", "M2", "Silicon-Valley", "M3"],
     "correctIndex": 0,
     "timeLimit": 10
