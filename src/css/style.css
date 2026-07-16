@@ -6,9 +6,16 @@ body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background: url("../image/quiz-hintergrund.jpg");
-  background-position-x: center top;
-  background-size: 100%;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #1a1a1a;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-position: right top;
+  }
 }
 
 .question-image {
@@ -27,14 +34,6 @@ body {
 }
 .qrcode-section {
   margin-top: 1.5rem;
-}
-
-/* QR-Code ist nur für Zugriff per Smartphone gedacht, daher auf schmalen
-   Bildschirmen (Handy) ausblenden. */
-@media (max-width: 480px) {
-  .qrcode-section {
-    display: none;
-  }
 }
 .topbar {
   background: #2f5bff;
