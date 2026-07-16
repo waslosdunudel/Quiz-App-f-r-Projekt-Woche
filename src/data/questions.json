@@ -15,56 +15,79 @@
   },
   {
     "question": "Wie heißt der derzeitige Schulleiter?",
-    "image": "image/profilbild.webp",
-    "options": ["Herr Müller", "Herr Volkman", "Herr Heine ", "Herr Grabowski"],
+    "image": "../image/Volkmann-.jpg",
+    "options": ["Herr Brinkmann", "Herr Volkman", "Herr Heine ", "Herr Grabowski"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Gebäude hat CSBME?",
     "image": "image/Gebäude.webp",
-    "options": ["3", "8", "5", "4"],
+    "options": ["3", "2", "5", "4"],
     "correctIndex": 0,
     "timeLimit": 10
   },
   {
     "question": "Im welchem Jahr wurde die Schule CSBME erbaut?",
-    "image": "image/Huasbaustelle.webp",
+    "image": "../image/csbme-aussen.webp",
     "options": ["1963", "1994", "1980", "1976"],
     "correctIndex": 3,
     "timeLimit": 10
   },
   {
     "question": "Wer ist der Abteilungsleiter des Beruflichen Grundbildung?",
-    "options": ["Bodo Letzsch", "Jochen Holwitt", "Jochen Holwitt", "Herr Heinrich"],
+    "image": "../image/Heinrich.jpg",
+    "options": ["Armin Laschet", "Herr Sommer", "Herr Filep", "Herr Heinrich"],
     "correctIndex": 3,
     "timeLimit": 10
   },
   {
-    "question": "Wie viele Abteilungen gibt es insgesamt?",
-    "options": ["7", "9", "5", "8"],
-    "correctIndex": 3,
+    "question": "Wie viele Fachbereiche bietet CSBME an?",
+    "image": "../image/symbolbild_hai-710x375.jpg",
+    "options": ["3", "9", "5", "7"],
+    "correctIndex": 2,
     "timeLimit": 10
   },
     {
     "question": "Wofür Steht CSBME?",
-    "image": "image/CSBME.webp",
+    "image": "../image/CSBME.webp",
     "options": ["Charlies Stehbetrieb Metall & Elektro", "Chemie-, Stahl-, Bau- und Metall-Elektrik", "Carl-Severing-Berufskolleg für Metall- und Elektrotechnik", "Computer Science und Biomedical Engineering"],
     "correctIndex": 2,
     "timeLimit": 10
   },
     {
     "question": "Im welchen Gebäudenteil befindet sich das Sekretariat?",
-    "image": "image/Schulbuero in M1.jpg",
-    "options": ["M1", "M2", "Silicon-Valley", "M3"],
+    "image": "../image/Schulbuero.jpg",
+    "options": ["M1", "M2", "M3", "M4"],
     "correctIndex": 0,
     "timeLimit": 10
   },
   {
     "question": "Welche von diesen Fächern gibt es nicht in der CSBME",
-    "image": "image/fächer.webp",
+    "image": "../image/fächer.webp",
     "options": ["Politik", "Deutsch", "Biologie", "Religion "],
     "correctIndex": 2,
+    "timeLimit": 10
+  },
+  {
+    "question": "Mit welchem internationalen Technologiekonzern ist das CSBME als zertifizierter Partner kooperiert?",
+    "image": "../image/konzerne.webp",
+    "options": ["Bosch", "IBM", "Microsoft", "Siemens"],
+    "correctIndex": 3,
+    "timeLimit": 10
+  },
+  {
+    "question": "Kann man nach 15 min abhauen wenn der Lehrer nicht da ist?",
+    "image": "../image/uhr15nach.webp",
+    "options": ["Ja", "Nein"],
+    "correctIndex": 1,
+    "timeLimit": 10
+  },
+  {
+    "question": "Wie viele Schüler hat die Schule CSBME?",
+    "image": "../image/schueler.webp",
+    "options": ["etwa 500", "etwa 2000", "etwa 3000", "etwa 4000"],
+    "correctIndex": 3,
     "timeLimit": 10
   }
 ]

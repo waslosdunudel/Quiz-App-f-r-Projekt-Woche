@@ -64,10 +64,18 @@ if (!is_array($input) || !isset($input['name'], $input['score'])) {
 
 // --- Namen validieren/bereinigen ---
 $name = (string) $input['name'];
+
+// Nur gültiges UTF-8 zulassen; kaputte/manipulierte Byte-Sequenzen ablehnen.
+if (!mb_check_encoding($name, 'UTF-8')) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Der Name enthält ungültige Zeichen.']);
+    exit;
+}
+
 $name = trim($name);
 // Steuerzeichen und Zeilenumbrüche entfernen (verhindert CSV/Header-Injection).
 $name = preg_replace('/[\x00-\x1F\x7F]/u', '', $name) ?? '';
-$name = mb_substr($name, 0, MAX_NAME_LENGTH);
+$name = mb_substr($name, 0, MAX_NAME_LENGTH, 'UTF-8');
 
 if ($name === '') {
     $name = 'Anonym';
