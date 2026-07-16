@@ -1,14 +1,14 @@
 [
   {
     "question": "An welcher Straße ist die Schule?",
-    "image": "image/straßenbild.webp",
+    "image": "../image/straße.jpg",
     "options": ["Bleichstraße", "Werner-Bock Straße", "Hermann-Delius Straße", "Huberstraße"],
     "correctIndex": 2,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Etagen hat das Gebäude M2?",
-    "image": "image/Hochhaus.webp",
+    "image": "../image/M2gebäude.jpg",
     "options": ["5", "6", "7", "8"],
     "correctIndex": 1,
     "timeLimit": 10
@@ -22,7 +22,7 @@
   },
   {
     "question": "Wie viele Gebäude hat CSBME?",
-    "image": "image/Gebäude.webp",
+    "image": "../image/Gebäude.webp",
     "options": ["3", "2", "5", "4"],
     "correctIndex": 0,
     "timeLimit": 10
@@ -78,7 +78,7 @@
   },
   {
     "question": "Kann man nach 15 min abhauen wenn der Lehrer nicht da ist?",
-    "image": "../image/uhr15nach.webp",
+    "image": "../image/15-minuten-uhr-symbol.webp",
     "options": ["Ja", "Nein"],
     "correctIndex": 1,
     "timeLimit": 10

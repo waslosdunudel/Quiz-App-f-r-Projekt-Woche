@@ -18,6 +18,24 @@ body {
   margin: 0 auto 1rem;
   border-radius: 8px;
 }
+.start-qrcode {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.qrcode-section {
+  margin-top: 1.5rem;
+}
+
+/* QR-Code ist nur für Zugriff per Smartphone gedacht, daher auf schmalen
+   Bildschirmen (Handy) ausblenden. */
+@media (max-width: 480px) {
+  .qrcode-section {
+    display: none;
+  }
+}
 .topbar {
   background: #2f5bff;
   color: #fff;

@@ -77,7 +77,7 @@ src/
 ### Starten
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/waslosdunudel/Quiz-App-f-r-Projekt-Woche.git
 cd HTML-Website-Quiz
 sudo docker compose up -d --build
 ```
