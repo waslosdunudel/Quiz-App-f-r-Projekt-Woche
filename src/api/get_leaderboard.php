@@ -17,6 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 if (!file_exists(CSV_PATH)) {
+    // Noch keine Bestenliste vorhanden: leere CSV mit Header anlegen.
+    $directory = dirname(CSV_PATH);
+    if (!is_dir($directory)) {
+        mkdir($directory, 0755, true);
+    }
+    $handle = fopen(CSV_PATH, 'c+');
+    if ($handle !== false) {
+        flock($handle, LOCK_EX);
+        fputcsv($handle, ['name', 'score', 'date']);
+        flock($handle, LOCK_UN);
+        fclose($handle);
+    }
     echo json_encode([]);
     exit;
 }
