@@ -78,7 +78,7 @@ src/
 
 ```bash
 git clone https://github.com/waslosdunudel/Quiz-App-f-r-Projekt-Woche.git
-cd HTML-Website-Quiz
+cd Quiz-App-f-r-Projekt-Woche
 sudo docker compose up -d --build
 ```
 

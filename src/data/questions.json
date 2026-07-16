@@ -1,91 +1,91 @@
 [
   {
     "question": "An welcher Straße ist die Schule?",
-    "image": "../image/straße.jpg",
+    "image": "image/straße.jpg",
     "options": ["Bleichstraße", "Werner-Bock Straße", "Hermann-Delius Straße", "Huberstraße"],
     "correctIndex": 2,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Etagen hat das Gebäude M2?",
-    "image": "../image/M2gebäude.jpg",
+    "image": "image/M2gebäude.jpg",
     "options": ["5", "6", "7", "8"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
     "question": "Wie heißt der derzeitige Schulleiter?",
-    "image": "../image/Volkmann-.jpg",
+    "image": "image/Volkmann-.jpg",
     "options": ["Herr Brinkmann", "Herr Volkman", "Herr Heine ", "Herr Grabowski"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Gebäude hat CSBME?",
-    "image": "../image/Gebäude.webp",
+    "image": "image/Gebäude.jpg",
     "options": ["3", "2", "5", "4"],
     "correctIndex": 0,
     "timeLimit": 10
   },
   {
     "question": "Im welchem Jahr wurde die Schule CSBME erbaut?",
-    "image": "../image/csbme-aussen.webp",
+    "image": "image/csbme-aussen.webp",
     "options": ["1963", "1994", "1980", "1976"],
     "correctIndex": 3,
     "timeLimit": 10
   },
   {
     "question": "Wer ist der Abteilungsleiter des Beruflichen Grundbildung?",
-    "image": "../image/Heinrich.jpg",
+    "image": "image/Heinrich.jpg",
     "options": ["Armin Laschet", "Herr Sommer", "Herr Filep", "Herr Heinrich"],
     "correctIndex": 3,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Fachbereiche bietet CSBME an?",
-    "image": "../image/symbolbild_hai-710x375.jpg",
+    "image": "image/symbolbild_hai-710x375.jpg",
     "options": ["3", "9", "5", "7"],
     "correctIndex": 2,
     "timeLimit": 10
   },
     {
     "question": "Wofür Steht CSBME?",
-    "image": "../image/CSBME.webp",
+    "image": "image/CSBME.webp",
     "options": ["Charlies Stehbetrieb Metall & Elektro", "Chemie-, Stahl-, Bau- und Metall-Elektrik", "Carl-Severing-Berufskolleg für Metall- und Elektrotechnik", "Computer Science und Biomedical Engineering"],
     "correctIndex": 2,
     "timeLimit": 10
   },
     {
     "question": "Im welchen Gebäudenteil befindet sich das Sekretariat?",
-    "image": "../image/Schulbuero.jpg",
+    "image": "image/Schulbuero.jpg",
     "options": ["M1", "M2", "M3", "M4"],
     "correctIndex": 0,
     "timeLimit": 10
   },
   {
     "question": "Welche von diesen Fächern gibt es nicht in der CSBME",
-    "image": "../image/fächer.webp",
+    "image": "image/fächer.webp",
     "options": ["Politik", "Deutsch", "Biologie", "Religion "],
     "correctIndex": 2,
     "timeLimit": 10
   },
   {
     "question": "Mit welchem internationalen Technologiekonzern ist das CSBME als zertifizierter Partner kooperiert?",
-    "image": "../image/konzerne.webp",
+    "image": "image/konzerne.webp",
     "options": ["Bosch", "IBM", "Microsoft", "Siemens"],
     "correctIndex": 3,
     "timeLimit": 10
   },
   {
     "question": "Kann man nach 15 min abhauen wenn der Lehrer nicht da ist?",
-    "image": "../image/15-minuten-uhr-symbol.webp",
+    "image": "image/15-minuten-uhr-symbol.webp",
     "options": ["Ja", "Nein"],
     "correctIndex": 1,
     "timeLimit": 10
   },
   {
     "question": "Wie viele Schüler hat die Schule CSBME?",
-    "image": "../image/schueler.webp",
+    "image": "image/schüler.jpg",
     "options": ["etwa 500", "etwa 2000", "etwa 3000", "etwa 4000"],
     "correctIndex": 3,
     "timeLimit": 10

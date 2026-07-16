@@ -5,10 +5,12 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: url("../image/quiz-hintergrund.jpg");
+  background: url("../image/Hintergrund.webp");
   background-position: center top;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #000032;
   color: #1a1a1a;
 }
 
