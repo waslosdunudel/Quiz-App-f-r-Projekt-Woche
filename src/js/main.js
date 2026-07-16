@@ -15,6 +15,10 @@
   const finalScoreEl = document.getElementById("final-score");
   const submitStatusEl = document.getElementById("submit-status");
 
+  // Auf GitHub Pages steht kein PHP-Backend zur Verfügung, daher wird die
+  // Bestenliste dort ausgeblendet (die Docker-Version bleibt unverändert).
+  const LEADERBOARD_ENABLED = !/\.github\.io$/.test(location.hostname);
+
   let currentScore = 0;
   let previousViewId = "start-view";
 
@@ -75,4 +79,10 @@
       switchView("result-view");
     },
   });
+
+  if (!LEADERBOARD_ENABLED) {
+    showLeaderboardBtn.hidden = true;
+    viewLeaderboardBtn.hidden = true;
+    nameForm.hidden = true;
+  }
 })();

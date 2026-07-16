@@ -105,6 +105,14 @@ sudo docker compose up -d --build
 sudo docker compose down
 ```
 
+## Hosting auf GitHub Pages (nur Quiz, ohne Bestenliste)
+
+GitHub Pages liefert ausschließlich statische Dateien aus – PHP (und damit die Bestenliste) kann dort nicht laufen. Für eine reine Quiz-Demo ohne Backend gibt es daher einen separaten, statischen Deployment-Weg:
+
+- Der Workflow [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) veröffentlicht bei jedem Push auf `main` automatisch den Ordner `src/` auf GitHub Pages (Repo-Einstellungen: **Settings → Pages → Source: GitHub Actions**).
+- [src/js/main.js](src/js/main.js) erkennt zur Laufzeit, ob die Seite unter einer `*.github.io`-Domain läuft, und blendet in diesem Fall die Buttons „Bestenliste ansehen“ sowie das Namens-Eingabeformular aus. Die Docker-Version (eigene Domain/IP) bleibt davon unberührt und zeigt die Bestenliste weiterhin an.
+- Möchtest du die Bestenliste auch bei GitHub-Pages-Hosting nutzen, müsste das PHP-Backend zusätzlich extern (z. B. per Docker-Compose auf einem eigenen Server) laufen und die `fetch`-Aufrufe in [src/js/leaderboard.js](src/js/leaderboard.js) müssten auf dessen URL zeigen, statt auf relative Pfade wie `api/submit_score.php`.
+
 ### Fragen anpassen
 
 Fragenkatalog in [src/data/questions.json](src/data/questions.json) bearbeiten und passende Bilder in `src/image/` ablegen (Dateiname muss exakt mit dem `image`-Feld übereinstimmen). Danach neu bauen (siehe oben).
